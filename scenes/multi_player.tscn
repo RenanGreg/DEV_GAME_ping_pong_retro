@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkti8u3cu1usy"]
+[gd_scene load_steps=7 format=3 uid="uid://bkti8u3cu1usy"]
 
 [ext_resource type="Script" path="res://scripts/player1.gd" id="1_oedea"]
 [ext_resource type="Script" path="res://Button.gd" id="2_66fn8"]
 [ext_resource type="Script" path="res://player2.gd" id="2_b8mbd"]
+[ext_resource type="Script" path="res://bola.gd" id="4_gdwpm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gskbm"]
 radius = 5.0
@@ -37,6 +38,7 @@ script = ExtResource("2_66fn8")
 
 [node name="bola" type="CharacterBody2D" parent="."]
 position = Vector2(463, 262)
+script = ExtResource("4_gdwpm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bola"]
 position = Vector2(-21, -2)
