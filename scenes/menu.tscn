@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdeo1omjbujwm"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_ple28"]
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_ple28")
+
+[node name="SinglePlayer" type="Button" parent="."]
+offset_left = 446.0
+offset_top = 143.0
+offset_right = 548.0
+offset_bottom = 199.0
+text = "singleplayer
+"
+
+[node name="MultiPlayer" type="Button" parent="."]
+offset_left = 440.0
+offset_top = 266.0
+offset_right = 542.0
+offset_bottom = 322.0
+text = "MultiPlayer
+
+"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 411.0
+offset_top = 24.0
+offset_right = 595.0
+offset_bottom = 66.0
+text = "Ping Pong da Rapaziada
+"
+
+[connection signal="pressed" from="SinglePlayer" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="MultiPlayer" to="." method="_on_multi_player_pressed"]

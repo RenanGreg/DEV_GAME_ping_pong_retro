@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkti8u3cu1usy"]
+
+[ext_resource type="Script" path="res://scripts/player1.gd" id="1_oedea"]
+[ext_resource type="Script" path="res://Button.gd" id="2_66fn8"]
+[ext_resource type="Script" path="res://player2.gd" id="2_b8mbd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gskbm"]
+radius = 5.0
+height = 216.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u4l2w"]
+radius = 20.2237
+
+[node name="MultiPlayer" type="Node2D"]
+
+[node name="player1" type="StaticBody2D" parent="."]
+position = Vector2(5, 2)
+script = ExtResource("1_oedea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player1"]
+position = Vector2(90, 247)
+shape = SubResource("CapsuleShape2D_gskbm")
+
+[node name="player2" type="StaticBody2D" parent="."]
+position = Vector2(5, 2)
+script = ExtResource("2_b8mbd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player2"]
+position = Vector2(782, 248)
+shape = SubResource("CapsuleShape2D_gskbm")
+
+[node name="volta menu" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Voltar ao Menu "
+script = ExtResource("2_66fn8")
+
+[node name="bola" type="CharacterBody2D" parent="."]
+position = Vector2(463, 262)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bola"]
+position = Vector2(-21, -2)
+shape = SubResource("CircleShape2D_u4l2w")
+
+[connection signal="pressed" from="volta menu" to="player1" method="_on_volta_menu_pressed"]
